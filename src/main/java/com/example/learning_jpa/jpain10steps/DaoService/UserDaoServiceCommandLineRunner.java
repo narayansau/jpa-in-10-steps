@@ -23,7 +23,7 @@ public class UserDaoServiceCommandLineRunner implements
            LoggerFactory
             .getLogger( UserDaoServiceCommandLineRunner.class );
 @Autowired
-    private UerDaoService uerDaoService;
+    private UserDaoService uerDaoService;
 
     @Autowired
 private UesrRepositoy userRepository;
