@@ -5,10 +5,14 @@ package com.example.learning_jpa.jpain10steps.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.apache.catalina.LifecycleState;
+
+import java.util.List;
 
 @ApiModel(description="All Details about the user")
 @Entity
@@ -22,7 +26,8 @@ public class User{
     private String name;
     private String role;
 
-
+   // @OneToMany(mappedBy="user")
+   // private List <Post> posts;
 
     public User(String name, String role) {
         super();
@@ -40,7 +45,15 @@ public class User{
         this.name=name;
         this.role=role;
     }
-
+/******************************
+    public User(@Size(min=2, message="The Name should have atleast two characters") String name, String role,
+                //List <Post> posts
+                ) {
+        this.name=name;
+        this.role=role;
+      //  this.posts=posts;
+    }
+*********************/
     public long getId() {
         return id;
     }
@@ -65,12 +78,21 @@ public class User{
         this.role=role;
     }
 
+   // public List <Post> getPosts() {
+  //      return posts;
+  //  }
+
+   // public void setPosts(List <Post> posts) {
+     //   this.posts=posts;
+   // }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", role='" + role + '\'' +
+                // ",    posts=" + posts +
                 '}';
     }
 }
