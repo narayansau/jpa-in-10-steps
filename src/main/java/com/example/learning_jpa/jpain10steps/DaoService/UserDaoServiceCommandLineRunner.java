@@ -15,6 +15,7 @@ import javax.xml.ws.ServiceMode;
 import java.util.List;
 import java.util.Optional;
 
+@SuppressWarnings("ALL")
 @Service
 public class UserDaoServiceCommandLineRunner implements
         CommandLineRunner{
